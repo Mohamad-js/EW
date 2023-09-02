@@ -169,6 +169,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     align-items: center;
     height: 50px;
     z-index: 5;
+    transition: ease-in-out 1s;
 }
 
 .navbar {
@@ -183,7 +184,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     font-family: vaziril;
     cursor: pointer;
     z-index: 2;
-    color: aqua;
+    color: rgb(255, 255, 255);
 }
 
 .toys-drop {
@@ -453,7 +454,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 }
 
 .hover-line {
-    background-color: rgb(255, 255, 255);
+    background-color: aqua;
     height: 1px;
     position: absolute;
     top: 45px;;
@@ -484,5 +485,84 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 }
 
 .n3 {
-    top: -100px
+    top: -190px
+}
+
+.bug-fix {
+    z-index: -5;
+    top: -190px;
+}
+
+.box {
+    position: absolute;
+    top: 90%;
+    width: 100vw;
+    display: flex;
+    justify-content: center
+}
+
+.box span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid aqua;
+    border-right: 2px solid aqua;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-10px,-10px);
+    }
+    50% {opacity: 1;}
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(15px,15px);
+    }
+}
+
+.overlay {
+    background-image: linear-gradient(to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,1));
+    height: 120px;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+}
+
+.svg {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 5px;
+    left: 80px;
+}
+
+.st0{
+    display:none;
+}
+
+.st1{
+    display:inline;
+}
+
+.st2{
+    fill:#00ffdd;
+    size: 10px;
+}
+
+.st3{
+    display:inline;
+}
+
+.st3,.st4{
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+    fill:#141414;
 }
