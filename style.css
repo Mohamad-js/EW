@@ -82,9 +82,26 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     width: 100vw;
     justify-content: center;
     align-items: center;
-    top: 25px;
+    top: 200px;
     left: 0;
-    z-index: 0;
+    z-index: 1;
+}
+
+.back {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 0;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 1s;
+    overflow: hidden;
+}
+
+.back:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .btn {
@@ -94,29 +111,32 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     background-color: rgb(255, 255, 255);
     color: rgb(0, 195, 255);
     font-family: shabnamm;
+    font-size: 15px;
+    position: absolute;
     cursor: pointer;
-}
-
-.ball {
+    top: 140px;
     width: 200px;
-    position: relative;
-    top: -250px;
-    left: 10px;
-    z-index: 0;
 }
 
-.ball2 {
-    position: relative;
-    width: 50px;
-    top: -250px;
-    z-index: 0;
+.up {
+    color: white;
+    font-family: shabnamt;
+    position: absolute;
+    top: 70px;
+}
+
+.down {
+    color: white;
+    position: absolute;
+    top: 100px;
+    font-size: 17px;
+    font-family: shabnamt;
 }
 
 .container {
-    height: 455px;
+    height: 100vh;
     top: 0;
     width: 100vw;
-    background-image: url(/Pictures/toys.jpg);
     background-size: 1350px;
     background-position-y: -200px;
     z-index: -3;
@@ -127,7 +147,6 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     font-size: 25px;
     font-family: vaziril;
     position: absolute;
-    top: -100px;
 }
 
 .login {
@@ -149,8 +168,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     justify-content: end;
     align-items: center;
     height: 50px;
-    box-shadow: 0 0 5px 1px black;
-    z-index: 2;
+    z-index: 5;
 }
 
 .navbar {
@@ -162,7 +180,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 
 .opt-closed {
     padding: 10px 20px;
-    font-family: vazirib;
+    font-family: vaziril;
     cursor: pointer;
     z-index: 2;
     color: aqua;
@@ -177,7 +195,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     left: 0;
     display: flex;
     justify-content: end;
-    z-index: 1;
+    z-index: 2;
 }
 
 .item {
@@ -345,16 +363,18 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     left: 0;
     display: flex;
     justify-content: end;
-    z-index: 1;
+    z-index: 2;
 }
 
 .fader {
     position: fixed;
-    height: 210px;
+    height: 100vh;
     bottom: 0;
     width: 100vw;
-    z-index: 10;
-    border-bottom: blue;
+    opacity: 0;
+    z-index: -2;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 1s;
 }
 
 .tehranpars {
@@ -427,3 +447,42 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     color: rgb(0, 195, 255);
 }
 
+.test {
+    z-index: 11;
+    position: relative;
+}
+
+.hover-line {
+    background-color: rgb(255, 255, 255);
+    height: 1px;
+    position: absolute;
+    top: 45px;;
+    opacity: 0;
+    transition: opacity 0.5s, right 0.5s, width 0.5s;
+}
+
+.slider {
+    position: absolute;
+    width: 100vw;
+}
+
+.slider-holder {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    overflow: hidden;
+}
+
+.n1 {
+    position: absolute;
+    top: -190px;
+}
+
+.n2 {
+    position: absolute;
+    top: -200px
+}
+
+.n3 {
+    top: -100px
+}
