@@ -1,9 +1,7 @@
 body {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scale:unset;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 @font-face {
@@ -79,7 +77,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     position: relative;
     display: flex;
     height: 100px;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     align-items: center;
     top: 200px;
@@ -136,7 +134,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 .container {
     height: 100vh;
     top: 0;
-    width: 100vw;
+    width: 100%;
     background-size: 1350px;
     background-position-y: -200px;
     z-index: -3;
@@ -464,7 +462,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 
 .slider {
     position: absolute;
-    width: 100vw;
+    width: 1360px;
 }
 
 .slider-holder {
@@ -476,7 +474,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 
 .n1 {
     position: absolute;
-    top: -190px;
+    top: -100px;
 }
 
 .n2 {
@@ -485,12 +483,18 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 }
 
 .n3 {
-    top: -190px
+    top: -10px;
+    width: 100%;
+}
+
+.n4 {
+    position: absolute;
+    top: px;
 }
 
 .bug-fix {
     z-index: -5;
-    top: -190px;
+    top: -100px;
 }
 
 .box {
@@ -583,4 +587,127 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     left: 70px;
     top: 29px;
     font-family: shabnamt;
+}
+
+/*    1      */
+@media (1200px < width < 1280px) {
+    .n2, .n3, .n4 {
+        width: 100%;
+        top: -100px;
+    }
+
+    .n1, .bug-fix {
+        top: -100px;
+    }
+
+    .slider-holder {
+        height: 80%;
+    }
+
+    .slider {
+        width: 100%;
+    }
+}
+
+/*    2      */
+@media (1025px < width < 1201px) {
+    .n2, .n3 {
+        width: 100%;
+        top: -100px;
+    }
+
+    .n1, .bug-fix{
+        top: -120px;
+    }
+
+    .n4 {
+        width: 100%;
+        top: 10px;
+    }
+
+    .slider-holder {
+       height: 70%; 
+    }
+
+    .slider {
+        width: 100%;
+    }
+}
+
+/*  3     */
+@media (769px < width < 1026px) {
+    .n2, .n3, .n4 {
+        width: 100%;
+        top: -70px;
+    }
+
+    .n1, .bug-fix {
+        top: -25px;
+    }
+
+    .slider-holder {
+        height: 63%;
+    }
+
+    .slider {
+        width: 100%;
+    }
+}
+
+/*   4    */
+@media (481px < width < 770px) {
+    .n4 {
+        top: 5px;
+    }
+
+    .n1, .bug-fix {
+        top: 40px;
+        width: 150%;
+    }
+
+    .n2 {
+        top: -10px;
+    }
+
+    .n3 {
+        top: -10px;
+    }
+
+    .slider-holder {
+        height: 48%;
+    }
+
+    .slider {
+        width: 100%;
+    }
+}
+
+/*  mobile size */
+@media (320px < width < 482px) {
+    .n2, .n3, .n4 {
+        width: 100%;
+        top: 46px;
+    }
+
+    .slider-holder {
+        height: 38%;
+    }
+
+    .n1, .bug-fix {
+        top: 50px;
+    }
+
+    .n2 {
+        top: 30px;
+    }
+
+    .slider {
+        width: 110%;
+    }
+}
+
+@media (width < 321px) {
+    .slider-holder {
+        visibility: hidden;
+    }
 }

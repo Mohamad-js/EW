@@ -35,7 +35,7 @@ window.addEventListener('scroll', () => {
 })
 
 button.addEventListener('click', (e) => {
-gsap.defaults({duration:2, rotation:100})
+gsap.defaults()
 gsap.timeline()
     .to('.title', {opacity:0, rotation:0, duration:0.5}, '1.5')
     .to('.login', {opacity:0.5, rotation:0}, '2')
@@ -142,6 +142,7 @@ account.addEventListener('mouseout', () => {
     account.style.color = 'white';
 })
 
+
 const wallpaper = gsap.timeline({repeat:-1, repeatDelay:5})
     .fromTo('.n4', {x:-1500}, {x:0, ease:'expo', zIndex:-4})
     .fromTo('.text1', {opacity:1}, {opacity:0, zIndex:1}, 5)
@@ -161,3 +162,4 @@ back.addEventListener('mouseover', () => {
 back.addEventListener('mouseout', () => {
     wallpaper.resume();
 })
+
