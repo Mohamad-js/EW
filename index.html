@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>دنیای اسباب بازی</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
 
-<div class="login"></div>
 <div class="container">
 
 <div class="slider-holder">
@@ -22,7 +21,7 @@
 </div>
 
     <div class="nav-hold">
-        <div class="navbar">
+        <div class="navbar v1">
             <div class="opt-closed o1">ورود به حساب</div>
             <div class="opt-closed o2">درخواست نمایندگی</div>
             <div class="opt-closed o3">محصولات</div>
@@ -30,18 +29,56 @@
             <div class="opt-closed o5">درباره ما</div>
             <div class="hover-line"></div>
         </div>
+
+        <div class="navbar v2">
+            <div class="opt-closed o1-res">ورود به حساب</div>
+            <div class="opt-closed o2-res">درخواست نمایندگی</div>
+            <div class="opt-closed o5-res">درباره ما</div>
+            <div class="hover-line line-res"></div>
+        </div>
+
         <svg class="svg" version="1.1" id="hobbies_1_" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 300 300" style="enable-background:new 0 0 128 128" xml:space="preserve"><g id="row2_1_"><g id="joystick_1_"><path class="st2" d="M120.2 38.4c-11.8-17.8-36.9-11.8-36.9-11.8s-2.8-3.6-7-6.8v.3c0 2.9-5.5 8-12.3 8-6.8 0-12.3-5-12.3-8v-.2c-4 3.2-6.5 6.7-6.5 6.7s-27-4.1-36.9 11.8c-12 19.2-7.4 59-7.4 59s6.8 16.1 14.8 15.7c16-.7 16.3-21.3 16.3-21.3s12.5 2.5 17.2 0c6.1-3.3 4.9-13.3 4.9-13.3h14.8s-1.2 9.8 7.4 13.3c5.4 2.1 14.4-2.3 14.4-2.3s14.7 23.6 22.2 23.6c9 0 14.8-19.7 14.8-19.7s2.8-39.4-7.5-55zM24.6 70.6V60.1l-9.8-.1V46.7h9.9V36.1H37v10.6h9.9V60l-9.9.4v10.2H24.6zm18.5 18.6c-4.8 0-8.6-4.2-8.6-9.3 0-5.1 3.9-9.3 8.6-9.3 4.8 0 8.6 4.2 8.6 9.3 0 5.2-3.9 9.3-8.6 9.3zm56.6-58.4c4.8 0 8.6 4.2 8.6 9.3 0 5.1-3.9 9.3-8.6 9.3s-8.6-4.2-8.6-9.3c0-5.1 3.9-9.3 8.6-9.3zM80 89.2c-4.8 0-8.6-4.2-8.6-9.3 0-5.1 3.9-9.3 8.6-9.3s8.6 4.2 8.6 9.3c.1 5.2-3.8 9.3-8.6 9.3zM89.9 68c-4.8 0-8.6-4.2-8.6-9.3s3.9-9.3 8.6-9.3 8.6 4.2 8.6 9.3-3.9 9.3-8.6 9.3zm12.3 18.6c-4.8 0-8.6-4.2-8.6-9.3s3.9-9.3 8.6-9.3c4.8 0 8.6 4.2 8.6 9.3s-3.8 9.3-8.6 9.3zm9.9-18.6c-4.8 0-8.6-4.2-8.6-9.3s3.9-9.3 8.6-9.3c4.8 0 8.6 4.2 8.6 9.3s-3.9 9.3-8.6 9.3z" id="Base"/><path class="st2" d="M64 14.8c-5.4 0-9.9 2.4-9.9 5.3s4.4 5.3 9.9 5.3 9.9-2.4 9.9-5.3-4.4-5.3-9.9-5.3zM44.3 49.4h-9.9V38.8H27v10.6h-9.9v8H27V68h7.4V57.4h9.9v-8zm55.4-2.6c3.4 0 6.1-3 6.1-6.7s-2.7-6.7-6.1-6.7c-3.4 0-6.1 3-6.1 6.7s2.8 6.7 6.1 6.7zM80 73.3c-3.4 0-6.2 3-6.2 6.6 0 3.7 2.8 6.6 6.2 6.6 3.4 0 6.2-3 6.2-6.6 0-3.6-2.8-6.6-6.2-6.6zm32-21.2c-3.4 0-6.2 3-6.2 6.6 0 3.7 2.8 6.6 6.2 6.6 3.4 0 6.2-3 6.2-6.6 0-3.7-2.7-6.6-6.2-6.6zm-22.1 0c-3.4 0-6.2 3-6.2 6.6 0 3.7 2.8 6.6 6.2 6.6 3.4 0 6.2-3 6.2-6.6 0-3.7-2.8-6.6-6.2-6.6zm12.3 18.5c-3.4 0-6.1 3-6.1 6.7s2.7 6.7 6.1 6.7 6.1-3 6.1-6.7-2.7-6.7-6.1-6.7zm-59.1 2.7c-3.4 0-6.2 3-6.2 6.6 0 3.7 2.8 6.6 6.2 6.6 3.4 0 6.2-3 6.2-6.6-.1-3.6-2.8-6.6-6.2-6.6z" id="buttons"/></g></g></svg>
         <div class="logo-text">دنیای سرگرمی</div>
         <div class="logo-slogan">سرگرمی برای همه</div>
+
+        <div class="ham-hold" onclick="side()">
+            <span class="bar top"></span>
+            <span class="bar mid"></span>
+            <span class="bar bot"></span>
+        </div>
+    </div>
+
+    <div class="menu-hold">
+        <div class="menu" style="direction: rtl";>
+            <div class="menu-toys">محصولات
+                <span class="toys-items opt1">انواع تن پوش ها</span>
+                <span class="toys-items opt2">انواع عروسک ها</span>
+                <span class="toys-items opt3">اسباب بازی کنترلی</span>
+                <span class="toys-items opt4">بازی های فکری آموزشی</span>
+                <span class="toys-items opt5">وسایل بازی عمومی</span>
+                <span class="toys-items opt6">بزرگسالان</span>
+            </div>
+            <div class="menu-branch">شعبه ها
+                <span class="branch-items opt7">تهرانپارس</span>
+                <span class="branch-items opt8">نیاوران</span>
+                <span class="branch-items opt9">پونک</span>
+                <span class="branch-items opt10">زعفرانیه</span>
+                <span class="branch-items opt11">تجریش</span>
+                <span class="branch-items opt12">سعادت آباد</span>
+            </div>
+            <div class="menu-rep opt13">درخواست نمایندگی</div>
+            <div class="menu-account opt13">ورود به حساب</div>
+            <div class="menu-about opt13">درباره ما</div>
+        </div>
     </div>
 
     <div class="fader"></div>
-<!--<div class="overlay"></div>-->
+    <div class="overlay"></div>
 
     <div class="toys-drop">
         <div class="item i0">بزرگسالان</div>
         <div class="item i1">وسایل بازی عمومی</div>
-        <div class="item i2">فکری آموزشی</div>
+        <div class="item i2">بازی های فکری آموزشی</div>
         <div class="item i3">اسباب بازی کنترلی</div>
         <div class="item i4">انواع عروسک ها</div>
         <div class="item i5">انواع تن پوش ها</div>
@@ -219,8 +256,8 @@
             <span class="text3 down">دست ساز طراحان مجرب</span>
             <span class="text4 up">تجربه واقعیت مجازی با بهترین برندها</span>
             <span class="text4 down">CAT WALK - Varjo VR/VA</span>
-            <button class="btn">سفارش اسباب بازی</button>
         </div>
+        <button class="btn">سفارش اسباب بازی</button>
     </div>
 </div>
 <div class="content">this is a text</div>
@@ -237,5 +274,5 @@
 <div class="content">this is a text</div>
 <div class="content">this is a text</div>
 </body>
-<script src="Script.js"></script>
+<script src="Script.js" defer></script>
 </html>

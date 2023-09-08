@@ -5,14 +5,18 @@ const title = document.querySelector('.title');
 const login = document.querySelector('.login');
 const toysDrop = document.querySelector('.toys-drop');
 const account = document.querySelector('.o1');
+const account2 = document.querySelector('.o1-res');
 const rep = document.querySelector('.o2');
+const rep2 = document.querySelector('.o2-res');
 const toys = document.querySelector('.o3');
 const branches = document.querySelector('.o4');
 const about = document.querySelector('.o5');
+const about2 = document.querySelector('.o5-res');
 const branchDrop = document.querySelector('.branch-drop');
 const fader = document.querySelector('.fader');
 const links = document.querySelectorAll('.links');
 const line = document.querySelector('.hover-line');
+const line2 = document.querySelector('.line-res');
 const navbar = document.querySelector('.navbar');
 const navHold = document.querySelector('.nav-hold');
 const pic1 = document.querySelector('.n1');
@@ -20,10 +24,24 @@ const pic2 = document.querySelector('.n2');
 const pic3 = document.querySelector('.n3');
 const pic4 = document.querySelector('.n4');
 const back = document.querySelector('.back');
+const sideMenu = document.querySelector('.menu');
+const hamHold = document.querySelector ('.ham-hold');
+const opt1 = document.querySelector('.opt1');
+const opt2 = document.querySelector('.opt2');
+const opt3 = document.querySelector('.opt3');
+const opt4 = document.querySelector('.opt4');
+const opt5 = document.querySelector('.opt5');
+const opt6 = document.querySelector('.opt6');
+const opt7 = document.querySelector('.opt7');
+const opt8 = document.querySelector('.opt8');
+const opt9 = document.querySelector('.opt9');
+const opt10 = document.querySelector('.opt10');
+const opt11 = document.querySelector('.opt11');
+const opt12 = document.querySelector('.opt12');
 
 var lastScrollTop = 0;
 window.addEventListener('scroll', () => {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    var scrollTop = window.pageXOffset || document.documentElement.scrollTop
     if (scrollTop > lastScrollTop) {
         navHold.style.top = "-100px";
         gsap.to('.toys-drop', {y:-100, ease: 'expo', duration: 0.75, inherit:false});
@@ -109,8 +127,20 @@ about.addEventListener('mouseover', () => {
     line.style.opacity = '1';
 })
 
+about2.addEventListener('mouseover', () => {
+    about2.style.color = 'aqua';
+    line2.style.width = '90px';
+    line2.style.right = '0';
+    line2.style.opacity = '1';
+})
+
 about.addEventListener('mouseleave', () => {
     about.style.color = 'white'; 
+})
+
+about2.addEventListener('mouseleave', () => {
+    about2.style.color = 'white';
+    line2.style.opacity = '0'
 })
 
 navbar.addEventListener('mouseleave', () => {
@@ -127,8 +157,20 @@ rep.addEventListener('mouseover', () => {
     rep.style.color = 'aqua'
 })
 
+rep2.addEventListener('mouseover', () => {
+    line2.style.width = '159px';
+    line2.style.right = '90px';
+    line2.style.opacity = '1';
+    rep2.style.color = 'aqua'
+})
+
 rep.addEventListener('mouseout', () => {
     rep.style.color = 'white'
+})
+
+rep2.addEventListener('mouseout', () => {
+    rep2.style.color = 'white'
+    line2.style.opacity = '0'
 })
 
 account.addEventListener('mouseover', () => {
@@ -138,8 +180,20 @@ account.addEventListener('mouseover', () => {
     line.style.width = '128px';
 })
 
+account2.addEventListener('mouseover', () => {
+    account2.style.color = 'aqua'
+    line2.style.right = '248px';
+    line2.style.opacity = '1';
+    line2.style.width = '128px';
+})
+
 account.addEventListener('mouseout', () => {
     account.style.color = 'white';
+})
+
+account2.addEventListener('mouseout', () => {
+    account2.style.color = 'white';
+    line2.style.opacity = '0'
 })
 
 
@@ -163,3 +217,13 @@ back.addEventListener('mouseout', () => {
     wallpaper.resume();
 })
 
+let menuStatus = 1;
+function side() {
+    if (menuStatus == 1){
+        gsap.to('.menu', {x:-200, ease:'expo', duration:1, inherit: false});
+        menuStatus = 0;
+    } else if (menuStatus == 0){
+        gsap.to('.menu', {x:0, ease:'expo', duration:1, inherit: false});
+        menuStatus = 1;
+    };
+}
