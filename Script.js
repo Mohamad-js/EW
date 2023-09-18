@@ -1,11 +1,8 @@
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const button = document.querySelector('.btn');
 const title = document.querySelector('.title');
-const login = document.querySelector('.login');
 const toysDrop = document.querySelector('.toys-drop');
-const account = document.querySelector('.o1');
-const account2 = document.querySelector('.o1-res');
 const rep = document.querySelector('.o2');
 const rep2 = document.querySelector('.o2-res');
 const toys = document.querySelector('.o3');
@@ -24,6 +21,9 @@ const pic2 = document.querySelector('.n2');
 const pic3 = document.querySelector('.n3');
 const pic4 = document.querySelector('.n4');
 const back = document.querySelector('.back');
+const up = document.querySelector('.up');
+const down = document.querySelector('.down');
+const holder = document.querySelector('.holder');
 const sideMenu = document.querySelector('.menu');
 const hamHold = document.querySelector ('.ham-hold');
 const opt1 = document.querySelector('.opt1');
@@ -38,192 +38,222 @@ const opt9 = document.querySelector('.opt9');
 const opt10 = document.querySelector('.opt10');
 const opt11 = document.querySelector('.opt11');
 const opt12 = document.querySelector('.opt12');
+const search = document.querySelector('.search');
+const searchBtn = document.querySelector('.submit');
+const cart = document.querySelector('#cart');
+const user = document.querySelector('#user');
+const bg1 = document.querySelector('.bg1');
+const bg2 = document.querySelector('.bg2');
+const backPhoto1 = document.querySelector('.bilboard-img');
+
 
 var lastScrollTop = 0;
 window.addEventListener('scroll', () => {
-    var scrollTop = window.pageXOffset || document.documentElement.scrollTop
-    if (scrollTop > lastScrollTop) {
-        navHold.style.top = "-100px";
-        gsap.to('.toys-drop', {y:-100, ease: 'expo', duration: 0.75, inherit:false});
-        gsap.to('.branch-drop', {y:-100, ease: 'expo', duration: 0.75, inherit:false});
-    } else {
-        navHold.style.top = '0';
-    }
-    lastScrollTop = scrollTop
-})
-
-button.addEventListener('click', (e) => {
-gsap.defaults()
-gsap.timeline()
-    .to('.title', {opacity:0, rotation:0, duration:0.5}, '1.5')
-    .to('.login', {opacity:0.5, rotation:0}, '2')
+  var scrollTop = window.pageXOffset || document.documentElement.scrollTop
+  if (scrollTop > lastScrollTop) {
+    navHold.style.top = "-100px";
+    gsap.to('.toys-drop', {y:-100, ease: 'expo', duration: 0.75, inherit:false});
+    gsap.to('.branch-drop', {y:-100, ease: 'expo', duration: 0.75, inherit:false});
+  } else {
+    navHold.style.top = '0';
+  }
+  lastScrollTop = scrollTop;
 });
 
 button.addEventListener('mouseover', () => {
-    button.style.backgroundColor = 'rgb(0,195,255)';
-    button.style.color = 'white'
+  button.style.backgroundColor = 'rgb(0,195,255)';
+  button.style.color = 'white';
 });
 
 button.addEventListener('mouseout', () => {
-    button.style.backgroundColor = 'white';
-    button.style.color = 'rgb(0,195,255)'
+  button.style.backgroundColor = 'white';
+  button.style.color = 'rgb(0,195,255)'
 });
 
 toys.addEventListener('mouseover', () => {
-    gsap.timeline()
-        .to('.toys-drop', {y:400, ease: 'expo', duration:1, inherit:false})
-        .to('.branch-drop', {y:0, ease: 'expo', duration:1, inherit:false}, '<')
-        fader.style.opacity = '1';
-        toys.style.color = 'aqua'
-        branches.style.color = 'white'
-        line.style.right = '183px'
-        line.style.width = '102px'
-        line.style.opacity = '1'
+  gsap.timeline()
+    .to('.toys-drop', {y:400, ease: 'expo', duration:1, inherit:false})
+    .to('.branch-drop', {y:0, ease: 'expo', duration:1, inherit:false}, '<')
+    fader.style.opacity = '1';
+    fader.style.zIndex = '8';
+    search.style.zIndex = '-10';
+    toys.style.color = 'aqua';
+    branches.style.color = 'white';
+    line.style.right = '183px';
+    line.style.width = '102px';
+    line.style.opacity = '1';
 });
 
 toysDrop.addEventListener('mouseleave', () => {
-    gsap.to('.toys-drop', {y:0, ease: 'expo', duration: 0.75, inherit:false});
-    fader.style.opacity = '0';
-    toys.style.color = 'white'
-    line.style.opacity = '0'
+  gsap.to('.toys-drop', {y:0, ease: 'expo', duration: 0.75, inherit:false});
+  fader.style.opacity = '0';
+  fader.style.zIndex = '-1';
+  toys.style.color = 'white'
+  line.style.opacity = '0'
 });
 
 toysDrop.addEventListener('mouseover', () => {
-    line.style.opacity = '1'
+  line.style.opacity = '1'
 })
 
 branches.addEventListener('mouseover', () => {
-    gsap.timeline()
-        .to('.branch-drop', {y:400, ease: 'expo', duration:0.75, inherit:false})
-        .to('.toys-drop', {y:0, ease: 'expo', duration: 0.75, inherit:false}, '<');
-        fader.style.opacity = '1';
-        branches.style.color = 'aqua';
-        toys.style.color = 'white';
-        about.style.color = 'white';
-        line.style.right = '90px'
-        line.style.width = '93px'
-        line.style.opacity = '1'
-        fader.style.zIndex = '1'
+  gsap.timeline()
+    .to('.branch-drop', {y:400, ease: 'expo', duration:0.75, inherit:false})
+    .to('.toys-drop', {y:0, ease: 'expo', duration: 0.75, inherit:false}, '<');
+    fader.style.opacity = '1';
+    fader.style.zIndex = '8'
+    branches.style.color = 'aqua';
+    toys.style.color = 'white';
+    about.style.color = 'white';
+    line.style.right = '90px'
+    line.style.width = '93px'
+    line.style.opacity = '1'
 });
 
 branchDrop.addEventListener('mouseleave', () => {
-    gsap.to('.branch-drop', {y:0, ease: 'expo', duration: 0.75, inherit:false});
-    fader.style.opacity = '0';
-    branches.style.color = 'white'
-    line.style.opacity = '0'
+  gsap.to('.branch-drop', {y:0, ease: 'expo', duration: 0.75, inherit:false});
+  fader.style.opacity = '0';
+  fader.style.zIndex = '-1';
+  branches.style.color = 'white'
+  line.style.opacity = '0'
 });
 
 branchDrop.addEventListener('mouseover', () => {
-    line.style.opacity = '1'
+  line.style.opacity = '1'
 })
 
 about.addEventListener('mouseover', () => {
-    gsap.to('.branch-drop', {y:0, ease: 'expo', duration:1, inherit:false})
-    about.style.color = 'aqua';
-    branches.style.color = 'white';
-    fader.style.opacity = '0';
-    line.style.width = '90px';
-    line.style.right = '0';
-    line.style.opacity = '1';
+  gsap.to('.branch-drop', {y:0, ease: 'expo', duration:1, inherit:false})
+  about.style.color = 'aqua';
+  branches.style.color = 'white';
+  fader.style.opacity = '0';
+  line.style.width = '90px';
+  line.style.right = '0';
+  line.style.opacity = '1';
 })
 
 about2.addEventListener('mouseover', () => {
-    about2.style.color = 'aqua';
-    line2.style.width = '90px';
-    line2.style.right = '0';
-    line2.style.opacity = '1';
+  about2.style.color = 'aqua';
+  line2.style.width = '90px';
+  line2.style.right = '0';
+  line2.style.opacity = '1';
 })
 
 about.addEventListener('mouseleave', () => {
-    about.style.color = 'white'; 
+  about.style.color = 'white'; 
 })
 
 about2.addEventListener('mouseleave', () => {
-    about2.style.color = 'white';
-    line2.style.opacity = '0'
+  about2.style.color = 'white';
+  line2.style.opacity = '0'
 })
 
 navbar.addEventListener('mouseleave', () => {
-    line.style.opacity = '0'
+  line.style.opacity = '0'
 })
 
 rep.addEventListener('mouseover', () => {
-    gsap.to('.toys-drop', {y:0, ease: 'expo', duration: 0.75, inherit:false});
-    fader.style.opacity = '0';
-    toys.style.color = 'white'
-    line.style.width = '159px';
-    line.style.right = '285px';
-    line.style.opacity = '1';
-    rep.style.color = 'aqua'
+  gsap.to('.toys-drop', {y:0, ease: 'expo', duration: 0.75, inherit:false});
+  fader.style.opacity = '0';
+  fader.style.zIndex = '-1';
+  toys.style.color = 'white'
+  line.style.width = '159px';
+  line.style.right = '285px';
+  line.style.opacity = '1';
+  rep.style.color = 'aqua'
 })
 
 rep2.addEventListener('mouseover', () => {
-    line2.style.width = '159px';
-    line2.style.right = '90px';
-    line2.style.opacity = '1';
-    rep2.style.color = 'aqua'
+  line2.style.width = '159px';
+  line2.style.right = '90px';
+  line2.style.opacity = '1';
+  rep2.style.color = 'aqua'
 })
 
 rep.addEventListener('mouseout', () => {
-    rep.style.color = 'white'
+  rep.style.color = 'white'
 })
 
 rep2.addEventListener('mouseout', () => {
-    rep2.style.color = 'white'
-    line2.style.opacity = '0'
+  rep2.style.color = 'white'
+  line2.style.opacity = '0'
 })
-
-account.addEventListener('mouseover', () => {
-    account.style.color = 'aqua'
-    line.style.right = '444px';
-    line.style.opacity = '1';
-    line.style.width = '128px';
-})
-
-account2.addEventListener('mouseover', () => {
-    account2.style.color = 'aqua'
-    line2.style.right = '248px';
-    line2.style.opacity = '1';
-    line2.style.width = '128px';
-})
-
-account.addEventListener('mouseout', () => {
-    account.style.color = 'white';
-})
-
-account2.addEventListener('mouseout', () => {
-    account2.style.color = 'white';
-    line2.style.opacity = '0'
-})
-
 
 const wallpaper = gsap.timeline({repeat:-1, repeatDelay:5})
-    .fromTo('.n4', {x:-1500}, {x:0, ease:'expo', zIndex:-4})
-    .fromTo('.text1', {opacity:1}, {opacity:0, zIndex:1}, 5)
-    .fromTo('.n3', {x:-1500}, {x:0, ease:'expo', zIndex:-3}, 5)
-    .fromTo('.text2', {opacity:0}, {opacity:1, zIndex:1}, 5)
-    .fromTo('.text2', {opacity:1}, {opacity:0, zIndex:1}, 10)
-    .fromTo('.n2', {x:-1500}, {x:0, ease:'expo', zIndex:-2}, 10)
-    .fromTo('.text3', {opacity:0}, {opacity:1, zIndex:1}, 10)
-    .fromTo('.text3', {opacity:1}, {opacity:0, zIndex:1}, 15)
-    .fromTo('.n1', {x:-1500}, {x:0, ease:'expo', zIndex:-1}, 15)
-    .fromTo('.text4', {opacity:0}, {opacity:1, zIndex:1}, 15)
+  .fromTo('.n4', {x:-1500}, {x:0, ease:'expo', zIndex:-4})
+  .fromTo('.text1', {opacity:1}, {opacity:0, zIndex:1}, 5)
+  .fromTo('.n3', {x:-1500}, {x:0, ease:'expo', zIndex:-3}, 5)
+  .fromTo('.text2', {opacity:0}, {opacity:1, zIndex:1}, 5)
+  .fromTo('.text2', {opacity:1}, {opacity:0, zIndex:1}, 10)
+  .fromTo('.n2', {x:-1500}, {x:0, ease:'expo', zIndex:-2}, 10)
+  .fromTo('.text3', {opacity:0}, {opacity:1, zIndex:1}, 10)
+  .fromTo('.text3', {opacity:1}, {opacity:0, zIndex:1}, 15)
+  .fromTo('.n1', {x:-1500}, {x:0, ease:'expo', zIndex:-1}, 15)
+  .fromTo('.text4', {opacity:0}, {opacity:1, zIndex:1}, 15)
 
 back.addEventListener('mouseover', () => {
-    wallpaper.pause();
+  wallpaper.pause();
 })
 
 back.addEventListener('mouseout', () => {
-    wallpaper.resume();
+  wallpaper.resume();
 })
 
 let menuStatus = 1;
 function side() {
-    if (menuStatus == 1){
-        gsap.to('.menu', {x:-200, ease:'expo', duration:1, inherit: false});
-        menuStatus = 0;
-    } else if (menuStatus == 0){
-        gsap.to('.menu', {x:0, ease:'expo', duration:1, inherit: false});
-        menuStatus = 1;
+  if (menuStatus == 1){
+    gsap.to('.menu', {x:-200, ease:'expo', duration:1, inherit: false});
+    fader.style.opacity = '1';
+    fader.style.zIndex = '8';
+    menuStatus = 0;
+    
+  } else if (menuStatus == 0){
+    gsap.to('.menu', {x:0, ease:'expo', duration:1, inherit: false});
+    fader.style.opacity = '0';
+    fader.style.zIndex = '-1';
+    menuStatus = 1;
     };
 }
+
+search.addEventListener('focus', () => {
+  search.style.outline = 'none';
+})
+
+fader.addEventListener('click', () => {
+  gsap.to('.menu', {x:0, ease:'expo', duration:1, inherit: false});
+    fader.style.opacity = '0';
+    fader.style.zIndex = '-1';
+    menuStatus = 1;
+})
+
+searchBtn.addEventListener('click', () => {
+  const input = document.querySelector('.search').value;
+  if (input == "پلی استیشن") {
+    alert("you cannot type a password");
+  }
+})
+
+cart.addEventListener('mouseover', () => {
+  bg1.style.opacity = '1';
+})
+
+cart.addEventListener('mouseleave', () => {
+  bg1.style.opacity = '0'
+})
+
+user.addEventListener('mouseover', () => {
+  bg2.style.opacity = '1';
+})
+
+user.addEventListener('mouseleave', () => {
+  bg2.style.opacity = '0'
+})
+
+  ScrollTrigger.create({
+    trigger: backPhoto1,
+    start: "top top",
+    end: "138% top",
+    markers: true,
+    pin: true,
+    toggleClass: {targets: ".bilboard-img", className: "img-see"}
+  });
