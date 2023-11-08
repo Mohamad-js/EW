@@ -73,64 +73,6 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
      url(/Fonts/Shabnam/Shabnam-Thin.woff2) format('woff2');
 }
 
-.holder {
-  position: relative;
-  display: flex;
-  height: 100px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  top: 200px;
-  left: 0;
-  z-index: 4;
-}
-
-.back {
-  position: absolute;
-  width: 400px;
-  height: 200px;
-  top: 0;
-  display: flex;
-  border-radius: 10px;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: background-color 1s;
-  overflow: hidden;
-}
-
-.back:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.btn {
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 195, 255);
-  font-family: shabnamm;
-  font-size: 15px;
-  position: absolute;
-  cursor: pointer;
-  top: 140px;
-  width: 200px;
-}
-
-.up {
-  color: white;
-  font-family: shabnamt;
-  position: absolute;
-  top: 70px;
-}
-
-.down {
-  color: white;
-  position: absolute;
-  top: 100px;
-  font-size: 17px;
-  font-family: shabnamt;
-}
-
 .container {
   height: 100vh;
   top: 0;
@@ -138,13 +80,6 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   background-size: 1350px;
   background-position-y: -200px;
   z-index: -3;
-}
-
-.title {
-  color: aqua;
-  font-size: 25px;
-  font-family: vaziril;
-  position: absolute;
 }
 
 .nav-hold {
@@ -460,9 +395,10 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 .slider-holder {
   height: 100vh;
   width: 100vw;
-  position: absolute;
+  position: relative;
   overflow: hidden;
   z-index: 3;
+  top: 0;
 }
 
 .n1 {
@@ -472,16 +408,16 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 
 .n2 {
   position: absolute;
-  top: -200px
+  top: -100px
 }
 
 .n3 {
   top: -10px;
 }
 
-.n4 {
+.n4, .n5 {
   position: absolute;
-  top: px;
+  top: 0;
 }
 
 .bug-fix {
@@ -595,11 +531,12 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 .menu-hold {
   width: 1000px;
   position: absolute;
+  top: 0;
   right: -200px;
   height: 100%;
   visibility: hidden;
   position: fixed;
-  z-index: 5;
+  z-index: 8;
 }
 
 .menu {
@@ -700,35 +637,28 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 
 .search-hold {
   position: absolute;
-  top: 8px;
+  top: 15px;
   direction: rtl;
   right: 510px;
-  width: 20%;
+  width: 300px;
   z-index: 10;
+  border-bottom: 1px solid aqua;
 }
 
 .search {
-  padding: 9px 39px;
-  border-radius: 10px;
+  padding-right: 39px;
+  padding-bottom: 4px;
   border: none;
-  width: 100%;
+  color: white;
+  width: 260px;
   font-family: shabnamt;
   font-size: 12px;
+  background-color: rgb(61,61,61);
 }
 
-.submit {
-  width: 25px;
-  height: 25px;
+.search-hold i {
   position: absolute;
-  top: 4.5px;
-  right: 5px;
-  border-radius: 10px;
-  background-color: rgb(61, 61, 61);
-}
-
-.search-hold > i {
-  position: absolute;
-  top: 17px;
+  top: 10px;
   right: 11px;
 }
 
@@ -792,7 +722,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 
 .bilboard .card {
   position: relative;
-  top: 50px;
+  top: 70px;
   width: 200px;
   left: 0;
   height: 280px;
@@ -801,7 +731,6 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   background: rgba(0, 247, 255, 0.2);
   overflow: hidden;
   display: flex;
-  justify-content: start;
   align-items: center;
   box-shadow: 0 0 5px 1px black;
 }
@@ -811,21 +740,19 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   text-align: center;
   display: flex;
   justify-content: center;
-  opacity: 1;
   transition: 0.5s;
 }
 
-.bilboard .card:hover .content {
-  opacity: 1;
+.bilboard .card:hover h2 {
+  color: aqua;
 }
 
 .bilboard .card .content h2 {
   position: absolute;
   top: -90px;
-  right: 20px;
   font-family: vazirim;
   font-size: 6rem;
-  color: rgba(17, 0, 255, 0.1);
+  color: rgba(0, 255, 255, 0.26);
   pointer-events: none;
 }
 
@@ -834,14 +761,14 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   font-family: vazirit;
   position: absolute;
   top: 40px;
-  color: #000c7a;
+  color: aqua;
   z-index: 1;
 }
 
 .bilboard .card .content p {
   font-size: 14px;
   font-family: vaziril;
-  color: #000000;
+  color: #ffffff;
   font-weight: 300;
   position: relative;
   top: 0;
@@ -887,33 +814,27 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 
 .bil-head {
   position: absolute;
-  top: 30px;
+  top: -40px;
   text-align: center;
   font-family: vazirim;
   font-size: 30px;
   color: rgb(255, 255, 255);
 }
 
-
 .con {
   position: relative;
-  top: -5px;
+  top: -20px;
   left: 0;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-}
-.bilboard-img2 {
-  position: absolute;
-  width: 100vw;
-  top: -140px;
 }
 
 .con-fade {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #000000b4;
+  background-color: rgb(38, 0, 255);
 }
 
 .page {
@@ -922,9 +843,13 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   top: 1000px;
 }
 
+.smallCards {
+  display: none;
+}
+
 /*    1      */
 @media (1200px < width < 1280px) {
-  .n2, .n3, .n4 {
+  .n2, .n3, .n4, .n5{
     width: 100%;
     top: -100px;
   }
@@ -939,10 +864,6 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 
   .slider {
     width: 100%;
-  }
-
-  .overlay {
-    visibility: hidden;
   }
 
   .box {
@@ -1042,15 +963,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   }
 
   .search-hold {
-    right: 610px;
-    width: 21%;
-    top: 550px;
-  }
-
-  .search {
-    border-bottom: solid 1px red;
-    border-radius: 0;
-    background-color: #dbdbdb;
+    right: 480px;
   }
 
   .icons {
@@ -1058,17 +971,28 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     top: -2px;
     left: -35px;
   }
-}
 
+  .bilboard .card {
+    top: -70px;
+  }
+
+  .bil-head {
+    top: -90px;
+  }
+
+  .con {
+    top: -141px;
+  }
+}
 /*    2      */
 @media (1025px < width < 1201px) {
-  .n2, .n3 {
+  .n2, .n3, .n5 {
     width: 100%;
     top: -100px;
   }
 
   .n1, .bug-fix{
-    top: -120px;
+    top: -100px;
   }
 
   .n4 {
@@ -1086,10 +1010,6 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
 
   .holder {
     top: 150px;
-  }
-
-  .overlay {
-    visibility: hidden;
   }
 
   .box {
@@ -1134,15 +1054,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   }
 
   .search-hold {
-    right: 610px;
-    width: 21%;
-    top: 550px;
-  }
-
-  .search {
-    border-bottom: solid 1px red;
-    border-radius: 0;
-    background-color: #dbdbdb;
+    right: 380px;
   }
 
   .icons {
@@ -1150,13 +1062,31 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     top: -2px;
     left: -35px;
   }
+  
+  .con {
+    top: -210px;
+  }
+
+  .bilboard .card {
+    top: 80px;
+    margin: 20px;
+  }
+
+  .bilboard {
+    top: -190px;
+  }
+
+  .bilboard-img {
+    position: absolute;
+    width: 1200px;
+  }
 }
 
-/*  3     */
+/*    3      */
 @media (769px < width < 1026px) {
   .n2, .n3, .n4 {
     width: 100%;
-    top: -70px;
+    top: -48px;
   }
 
   .n1, .bug-fix {
@@ -1164,44 +1094,14 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   }
 
   .slider-holder {
-    height: 63%;
+    height: 62%;
   }
 
   .slider {
     width: 100%;
   }
 
-  .holder {
-    top: 140px;
-    height: 60px;
-  }
-
-  .back {
-    width: 270px;
-    height: 150px;
-  }
-
-  .title {
-    font-size: 18px;
-  }
-
-  .up {
-    font-size: 12px;
-    top: 50px;
-  }
-
-  .down {
-    font-size: 12px;
-    top: 70px;
-  }
-
-  .btn {
-    width: 120px;
-    top: 100px;
-    font-size: 12px;
-  }
-
-  .line-res, .v1, .overlay, .box, .toys-drop, .branch-drop {
+  .line-res, .v1, .box, .toys-drop, .branch-drop {
     visibility: hidden;
   }
 
@@ -1276,15 +1176,13 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   }
 
   .search-hold {
-    right: 610px;
-    width: 21%;
-    top: 550px;
+    right: 340px;
+    top: 7px;
+    width: 150px;
   }
 
   .search {
-    border-bottom: solid 1px red;
-    border-radius: 0;
-    background-color: #dbdbdb;
+    width: 110px;
   }
 
   .icons {
@@ -1292,29 +1190,65 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     top: -8px;
     left: -50px;
   }
+  
+  .bilboard-img {
+    width: 1200px;
+    left: -200px;
+  }
+
+  .bilboard {
+    top: -240px;
+  }
+
+  .bilboard .card {
+    top: 100px;
+    width: 20%;
+    margin: 10px;
+  }
+  
+  .bilboard .card .content {
+    padding: 0;
+  }
+  
+  .bilboard .card .content h3 {
+    font-size: 1.1em;
+    top: 55px;
+  }
+  
+  .bilboard .card .content p {
+    font-size: 14px;
+    top: 10px;
+  }
+  
+  .bilboard .card .content a {
+    top: 200px;
+    margin-top: 15px;
+    font-size: 13px;
+  }
+
+  .con {
+    top: -250px;
+  } 
 }
 
-/*   4    */
-@media (481px < width < 770px) {
+/*    4      */
+@media (600px < width < 770px) {
+  .n2, .n3, .n5 {
+    top: -40px;
+  }
+
   .n4 {
-    top: 10px;
+    top: 0;
   }
 
   .n1, .bug-fix {
-    top: 40px;
+    top: 0;
     width: 150%;
-  }
-
-  .n2 {
-    top: -10px;
-  }
-
-  .n3 {
-    top: -10px;
   }
 
   .slider-holder {
     height: 47%;
+    background-color: #00ffdd;
   }
 
   .slider {
@@ -1333,28 +1267,7 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  .title {
-    font-size: 18px;
-    top: -10px;
-  }
-
-  .up {
-    font-size: 12px;
-    top: 35px;
-  }
-
-  .down {
-    font-size: 12px;
-    top: 55px;
-  }
-
-  .btn {
-    width: 120px;
-    top: 165px;
-    font-size: 12px;
-  }
-
-  .line-res, .v1, .v2, .overlay, .box, .toys-drop, .branch-drop {
+  .line-res, .v1, .v2, .box, .toys-drop, .branch-drop {
     visibility: hidden;
   }
 
@@ -1428,15 +1341,15 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
   }
 
   .search-hold {
-    right: 610px;
-    width: 21%;
-    top: 550px;
+    top: 8px;
+    right: 115px;
+    width: 200px;
+    border-bottom: 1px solid aqua;
   }
-
+  
   .search {
-    border-bottom: solid 1px red;
-    border-radius: 0;
-    background-color: #dbdbdb;
+    width: 160px;
+    background-color: rgb(61,61,61);
   }
 
   .icons {
@@ -1444,10 +1357,68 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     top: -8px;
     left: -50px;
   }
+
+  .bilboard-img {
+    width: 1200px;
+  }
+
+  .bil-head {
+    font-size: 22px;
+  }
+
+  .bilboard {
+    height: 190px;
+    top: -330px;
+
+  }
+  
+  .bilboard .card {
+    visibility: hidden;
+  }
+
+  .smallCards {
+    position: absolute;
+    visibility: visible;
+    top: 380px;
+    height: 110px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 1;
+  }
+
+  .smallCards div {
+    height: 110px;
+    width: 120px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .smallCards span {
+    position: absolute;
+    color: aqua;
+    font-size: 14px;
+    top: 70%;
+    text-align: center;
+    font-family: vazirit;
+    width: 100%;
+  }
+
+  .cards {
+    position: absolute;
+    top: 1px;
+    width: 98%;
+    border-radius: 10px;
+    border: 1px solid aqua;
+  }
+
+  .con {
+    top: -300px;
+  }
 }
 
 /*  mobile size */
-@media (width < 482px) {
+@media (width < 601px) {
   .n2, .n3, .n4 {
     width: 100%;
     top: 46px;
@@ -1469,49 +1440,11 @@ src: url(/Fonts/Shabnam/Shabnam-Thin.eot),
     width: 110%;
   }
 
-  .holder {
-    top: 100px;
-    height: 400px;
-  }
-
-  .back {
-    width: 200px;
-    height: 80px;
-    top: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .title {
-    font-size: 14px;
-    top: -5px;
-  }
-
-  .up {
-    font-size: 11px;
-    top: 30px;
-  }
-
-  .down {
-    font-size: 11px;
-    top: 50px;
-  }
-
-  .btn {
-    width: 120px;
-    top: 165px;
-    font-size: 12px;
-    border: 1px solid aqua;
-  }
-
-  .overlay {
-    visibility: hidden;
-  }
-
   .box {
     visibility: hidden;
   }
 
-  .line-res, .v1, .v2 .overlay, .box, .toys-drop, .branch-drop {
+  .line-res, .v1, .v2, .box, .toys-drop, .branch-drop {
     visibility: hidden;
   }
 

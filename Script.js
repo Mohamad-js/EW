@@ -1,7 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const button = document.querySelector('.btn');
-const title = document.querySelector('.title');
 const toysDrop = document.querySelector('.toys-drop');
 const rep = document.querySelector('.o2');
 const rep2 = document.querySelector('.o2-res');
@@ -20,10 +18,6 @@ const pic1 = document.querySelector('.n1');
 const pic2 = document.querySelector('.n2');
 const pic3 = document.querySelector('.n3');
 const pic4 = document.querySelector('.n4');
-const back = document.querySelector('.back');
-const up = document.querySelector('.up');
-const down = document.querySelector('.down');
-const holder = document.querySelector('.holder');
 const sideMenu = document.querySelector('.menu');
 const hamHold = document.querySelector ('.ham-hold');
 const opt1 = document.querySelector('.opt1');
@@ -44,7 +38,6 @@ const cart = document.querySelector('#cart');
 const user = document.querySelector('#user');
 const bg1 = document.querySelector('.bg1');
 const bg2 = document.querySelector('.bg2');
-const backPhoto1 = document.querySelector('.bilboard-img');
 
 
 var lastScrollTop = 0;
@@ -58,16 +51,6 @@ window.addEventListener('scroll', () => {
     navHold.style.top = '0';
   }
   lastScrollTop = scrollTop;
-});
-
-button.addEventListener('mouseover', () => {
-  button.style.backgroundColor = 'rgb(0,195,255)';
-  button.style.color = 'white';
-});
-
-button.addEventListener('mouseout', () => {
-  button.style.backgroundColor = 'white';
-  button.style.color = 'rgb(0,195,255)'
 });
 
 toys.addEventListener('mouseover', () => {
@@ -180,24 +163,11 @@ rep2.addEventListener('mouseout', () => {
 })
 
 const wallpaper = gsap.timeline({repeat:-1, repeatDelay:5})
-  .fromTo('.n4', {x:-1500}, {x:0, ease:'expo', zIndex:-4})
-  .fromTo('.text1', {opacity:1}, {opacity:0, zIndex:1}, 5)
-  .fromTo('.n3', {x:-1500}, {x:0, ease:'expo', zIndex:-3}, 5)
-  .fromTo('.text2', {opacity:0}, {opacity:1, zIndex:1}, 5)
-  .fromTo('.text2', {opacity:1}, {opacity:0, zIndex:1}, 10)
-  .fromTo('.n2', {x:-1500}, {x:0, ease:'expo', zIndex:-2}, 10)
-  .fromTo('.text3', {opacity:0}, {opacity:1, zIndex:1}, 10)
-  .fromTo('.text3', {opacity:1}, {opacity:0, zIndex:1}, 15)
-  .fromTo('.n1', {x:-1500}, {x:0, ease:'expo', zIndex:-1}, 15)
-  .fromTo('.text4', {opacity:0}, {opacity:1, zIndex:1}, 15)
-
-back.addEventListener('mouseover', () => {
-  wallpaper.pause();
-})
-
-back.addEventListener('mouseout', () => {
-  wallpaper.resume();
-})
+  .fromTo('.n5', {x:-1500}, {x:0, ease:'expo', zIndex:-5})
+  .fromTo('.n4', {x:-1500}, {x:0, ease:'expo', zIndex:-4}, 5)
+  .fromTo('.n3', {x:-1500}, {x:0, ease:'expo', zIndex:-3}, 10)
+  .fromTo('.n2', {x:-1500}, {x:0, ease:'expo', zIndex:-2}, 15)
+  .fromTo('.n1', {x:-1500}, {x:0, ease:'expo', zIndex:-1}, 20)
 
 let menuStatus = 1;
 function side() {
@@ -250,10 +220,22 @@ user.addEventListener('mouseleave', () => {
 })
 
   ScrollTrigger.create({
-    trigger: backPhoto1,
+    trigger: '.bilboard-img',
     start: "top top",
-    end: "138% top",
-    markers: true,
+    endTrigger: ".con-fade",
+    end: "top top",
     pin: true,
     toggleClass: {targets: ".bilboard-img", className: "img-see"}
   });
+
+const cards = gsap.timeline();
+  cards.to('.bil-head', {y:50})
+       .to('.card', {y:0}, 2);
+
+ScrollTrigger.create({
+  animation: cards,
+  trigger: ".slider-holder",
+  start: "bottom 80%",
+  duration: 2,
+  markers: true
+})
